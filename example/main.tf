@@ -1,9 +1,5 @@
 terraform {
   required_version = ">= 0.12.18"
-
-  required_providers {
-    template = ">= 2.1"
-  }
 }
 
 module cloud_config {
