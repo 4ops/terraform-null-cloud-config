@@ -1,0 +1,13 @@
+variable bootcmd {}
+variable runcmd {}
+variable final_message {}
+variable groups {}
+variable users {}
+variable default_user {}
+variable write_files {}
+variable ntp {}
+variable yum_repos {}
+variable packages {}
+variable package_update {}
+variable package_upgrade {}
+variable package_reboot_if_required {}
