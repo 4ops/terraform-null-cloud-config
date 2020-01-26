@@ -9,7 +9,7 @@ Terraform code:
 ```terraform
 module cloud_config {
   source  = "4ops/cloud-config/null"
-  version = "1.0.0"
+  version = "1.0.1"
 
   groups          = ["mygroup1", "mygroup2"]
   users           = [{ name = "test", group = ["mygroup1", "mygroup2"] }]
