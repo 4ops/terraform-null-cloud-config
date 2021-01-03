@@ -1,10 +1,10 @@
-variable template_file {
+variable "template_file" {
   type        = string
   default     = ""
   description = "Overrides default path to cloud-config template file if non-empty"
 }
 
-variable bootcmd {
+variable "bootcmd" {
   type        = list(string)
   default     = []
   description = <<-DESCRIPTION
@@ -18,7 +18,7 @@ variable bootcmd {
   DESCRIPTION
 }
 
-variable runcmd {
+variable "runcmd" {
   type        = list(string)
   default     = []
   description = <<-DESCRIPTION
@@ -31,13 +31,13 @@ variable runcmd {
   DESCRIPTION
 }
 
-variable final_message {
+variable "final_message" {
   type        = string
   default     = "Cloud-init boot finished at $TIMESTAMP. Up $UPTIME seconds this message is written by cloud-final when the system is finished its first boot"
   description = "Cloud init completion message"
 }
 
-variable groups {
+variable "groups" {
   # [{ name, members }]
   # name    = string       # The name of the group
   # members = list(string) # Optional. Specify users list in group.
@@ -46,7 +46,7 @@ variable groups {
   description = "Add groups to the system"
 }
 
-variable users {
+variable "users" {
   # [{ name, gecos, ... }]
   # name                = string       # Required. The user's login name
   # gecos               = string       # The user name's real name, i.e. "Bob B. Smith"
@@ -71,7 +71,7 @@ variable users {
   description = "Add users to the system"
 }
 
-variable default_user {
+variable "default_user" {
   # { name, gecos, ... }
   # name                = string       # The user's login name
   # gecos               = string       # The user name's real name, i.e. "Bob B. Smith"
@@ -95,13 +95,13 @@ variable default_user {
   description = "Setup default user settings"
 }
 
-variable keep_default_user {
+variable "keep_default_user" {
   type        = bool
   default     = true
   description = "Add 'default' item before users list"
 }
 
-variable write_files {
+variable "write_files" {
   # [{ path, content, ... }]
   # path        = string   # Required. Destination path
   # content     = string   # Required. File content.
@@ -112,7 +112,7 @@ variable write_files {
   description = "The content will be decoded accordingly and then written to the path that is provided"
 }
 
-variable ntp {
+variable "ntp" {
   # { pools, servers, ... }
   # pools      = list(string)
   # servers    = list(string)
@@ -130,7 +130,7 @@ variable ntp {
   description = "Setup ntp client settings"
 }
 
-variable yum_repos {
+variable "yum_repos" {
   # { id = { name, baseurl, ... } }
   # name = string
   # baseurl = string
@@ -142,25 +142,25 @@ variable yum_repos {
   description = "Add yum repository configuration to the system"
 }
 
-variable packages {
+variable "packages" {
   default     = []
   type        = list(string)
   description = "A list of packages to install can be provided"
 }
 
-variable package_update {
+variable "package_update" {
   default     = null
   type        = bool
   description = "Update packages cache in Ubuntu"
 }
 
-variable package_upgrade {
+variable "package_upgrade" {
   default     = null
   type        = bool
   description = "If any packages are to be installed or an upgrade is to be performed then the package cache will be updated first."
 }
 
-variable package_reboot_if_required {
+variable "package_reboot_if_required" {
   default     = null
   type        = bool
   description = "If a package installation or upgrade requires a reboot, then a reboot can be performed if package_reboot_if_required is specified"

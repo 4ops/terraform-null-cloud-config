@@ -9,7 +9,7 @@ Terraform code:
 ```terraform
 module cloud_config {
   source  = "4ops/cloud-config/null"
-  version = "1.0.1"
+  version = "1.0.2"
 
   groups          = ["mygroup1", "mygroup2"]
   users           = [{ name = "test", group = ["mygroup1", "mygroup2"] }]
@@ -38,4 +38,4 @@ package_upgrade: true
 final_message: All done :)
 ```
 
-Also, see [example](/example) directory.
+Also, see [examples](/examples) directory.
